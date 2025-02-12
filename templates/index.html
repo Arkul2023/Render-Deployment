@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Loan Prediction Form</h2>
+        <form action="/predict" method="post">
+            <label>Gender (1=Male, 0=Female):</label>
+            <input type="number" name="gender" required><br><br>
+            
+            <label>Married (1=Yes, 0=No):</label>
+            <input type="number" name="married" required><br><br>
+            
+            <label for="dependents">Dependents:</label>
+            <input type="number" name="dependents" id="dependents" required><br><br>
+            
+            <label>Education (1=Graduate, 0=Not Graduate):</label>
+            <input type="number" name="Education" required><br><br>
+            
+            <label>Self-Employeed (1=Yes, 0=No):</label>
+            <input type="number" name="Self-Employeed" required><br><br>
+            
+            <label for="applicant_income">Applicant Income:</label>
+            <input type="number" name="applicant_income" id="applicant_income" required><br><br>
+
+            <label for="Coapplicant_income">Coapplicant Income:</label>
+            <input type="number" name="Coapplicant_income" id="Coapplicant_income" required><br><br>
+            
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="number" name="loan_amount" id="loan_amount" required><br><br>
+            
+            <label for="loan_term">Loan Term (in months):</label>
+            <input type="number" name="loan_term" id="loan_term" required><br><br>
+            
+            <label for="credit_history">Credit History (1 for Yes, 0 for No):</label>
+            <input type="number" name="credit_history" id="credit_history" required><br><br>
+
+            <label for="Property Area">Property Area (0 for urban, 1 for semiurban, 2 for rural):</label>
+            <input type="number" name="Property Area" id="Property Area" required>
+
+            <button type="submit">Predict</button>
+        </form>
+        <h3 id="predictionResult"></h3>
+        
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
+</body>
+</html>
